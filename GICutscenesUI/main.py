@@ -7,6 +7,7 @@ import subprocess
 import json
 from json_minify import json_minify
 import re
+import win32api
 import base64
 import requests
 from subtitles import *
@@ -257,7 +258,6 @@ def log_subprocess_output(pipe, process=None):
 # ---- Explorer Functions ----
 
 def get_disks():
-	import win32api
 	return [d for d in win32api.GetLogicalDriveStrings()[0]]
 
 @eel.expose
